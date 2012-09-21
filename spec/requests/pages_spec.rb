@@ -1,48 +1,31 @@
 require 'spec_helper'
 
 describe "Pages" do
+  
+  subject { page }    # subject of tests: page
+  
   describe "Home page" do
-    it "should have the h1 'Welcome to Michey Soft'" do
-      visit '/'
-      page.should have_selector('h1', :text => 'Welcome to Michey Soft')
-      
-      #page.should have_content('GameHp')
-    end  
+    before { visit root_path }
     
-    it "should have the title 'Home'" do
-      visit '/'
-      page.should have_selector('title',
-                        :text => "Michey Soft | Home")
-    end
-    
+    it { should have_selector('h1', :text => 'Welcome to Michey Soft') }     
+    it { should have_selector('title',:text => "Michey Soft | Home") }    
+    it { should_not have_selector 'title', text: '| Home' }
   end
   
   describe "Link page" do
-       
-    it "should have the h1 'Michey Soft Links'" do
-      visit '/link'
-      page.should have_selector('h1', :text => 'Michey Soft Links')         
-    end 
+    before { visit link_path }
     
-   it "should have the title 'Link'" do
-      visit '/link'
-      page.should have_selector('title',
-                        :text => "Michey Soft | Link")
-    end
+    it { should have_selector('h1', :text => 'Michey Soft Links') }             
+    it { should have_selector('title', :text => "Michey Soft | Link") }    
+    
   end
   
   describe "Recruit page" do
-       
-    it "should have the h1 'Michey Soft Recruitment Drive'" do
-      visit '/recruit'
-      page.should have_selector('h1', :text => 'Michey Soft Recruitment Drive')         
-    end 
+    before { visit recruit_path }
+           
+    it { should have_selector('h1', :text => 'Michey Soft Recruitment Drive') }    
+    it { should have_selector('title', :text => "Michey Soft | Recruit") }
     
-   it "should have the title 'Recruit'" do
-      visit '/recruit'
-      page.should have_selector('title',
-                        :text => "Michey Soft | Recruit")
-    end
   end
   
 end
