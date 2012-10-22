@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", '#', id: "logo" %>
+      <%= link_to "", '#', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",    root_path %></li>
@@ -18,11 +18,23 @@
   				<div class="container">
 				<ul class="nav">
 					<li><a class="brand" href="#">Michey's Grand Adventure</a></li>
-					<li><a href="#">Products</a></li>
+					
+					<li><%= link_to "Products",    '#' %></li>
+					<li><%= link_to "Shop",    '#' %></li>
 					<li><%= link_to "Link",    link_path %></li>
 					<li><%= link_to "Recruit", recruit_path %></li>  			
 				</ul>
     			</div>
     		</div>    	
     </div>
+    
+    <div class="container">  
+		<div class="row">  
+			<div class="span10">  
+				<ul class="breadcrumb">  
+					<%= breadcrumbs %>
+				</ul>
+			</div>
+		</div>
+	</div>
     <br>	
