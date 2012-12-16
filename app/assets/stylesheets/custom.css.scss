@@ -66,9 +66,6 @@ a:hover, a:focus {
 a:hover, a:focus {
   color: #fff;
   text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
-
-.breadcrumb {
-  
 }
 
 /* universal */
@@ -223,6 +220,7 @@ aside {
   margin-right: 10px;
 }
 
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -245,4 +243,4 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
- }
+}
