@@ -4,9 +4,11 @@
       <%= link_to "", '#', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Create news",    root_path %></li>
-          <li><%= link_to "Add product",    link_path %></li>
-          <li><%= link_to "Recruit", recruit_path %></li>
+        	<% if signed_in? %>
+	        	<li><%= link_to "Create news",    root_path %></li>
+	          	<li><%= link_to "Create a new product",    new_product_path %></li>
+        	<% end %>        	                    	
+          	
           <% if signed_in? %>
             <li><%= link_to "Users", '#' %></li>
             <li id="fat-menu" class="dropdown">
@@ -35,23 +37,30 @@
   			<div class="navbar-top offset2 ">
   				<div class="container">
 				<ul class="nav">
-					<li><a class="brand" href="#">Michey's Grand Adventure</a></li>
-					
-					<li><%= link_to "Products",    '#' %></li>
+					<li><a class="brand" href="#">Mirai no Kiseki</a></li>
+					<li><%= link_to "Home",    root_path %></li>
+					<li><%= link_to "Products",    products_path %></li>
 					<li><%= link_to "Shop",    '#' %></li>
-					<li><%= link_to "Link",    link_path %></li>
-					<li><%= link_to "Recruit", recruit_path %></li>  			
+					<li><%= link_to "About",    about_path %></li>
+					<li><%= link_to "Links",    link_path %></li>
+					<li><%= link_to "Recruit", recruit_path %></li>					
+					  			
 				</ul>
     			</div>
+    			
     		</div>    	
     </div>
     
     <div class="container">  
 		<div class="row">  
 			<div class="span">  
-				<ul class="breadcrumb">  
-					<%= breadcrumbs %>
-				</ul>
+				<% if breadcrumbs == "Home" %>
+				<% else %>
+            		<ul class="breadcrumb">  
+						<%= breadcrumbs %>
+					</ul>
+          		<% end %>
+				
 			</div>
 		</div>
 	</div>

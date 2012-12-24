@@ -1,14 +1,16 @@
 class PagesController < ApplicationController
-  def home    
+  def home
+    
+        
   end
   
   def link
-      @title = "Links"
-      add_breadcrumb 'Links', :recruit_path
+    @title = "Links"
+    add_breadcrumb 'Links', ''
   end
   
   def recruit
-      @title = "Recruitment"
-      add_breadcrumb 'Recruit', :recruit_path
+    @title = "Recruitment"
+    add_breadcrumb 'Recruit', ''
   end
 end

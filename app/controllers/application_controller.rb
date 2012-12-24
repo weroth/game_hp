@@ -2,9 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   include SessionsHelper
 #  before_filter :set_initial_breadcrumbs
-  
   add_breadcrumb 'Home', '/'
-
+  
   private
 
   def set_initial_breadcrumbs

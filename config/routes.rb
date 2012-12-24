@@ -1,6 +1,8 @@
 GameHp::Application.routes.draw do
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :products#, only: [:create, :destroy]
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -8,9 +10,11 @@ GameHp::Application.routes.draw do
  
   root to: 'pages#home'
     
+  #match '/products/index', to: 'products#index'
     
   match '/link', to: 'pages#link'
   match '/recruit', to: 'pages#recruit'
+  match '/about', to: 'pages#about'
   
 #  get "welcome/index"
   #root :to => 'welcome#index'

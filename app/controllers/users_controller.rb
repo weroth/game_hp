@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
   
   def new
+    add_breadcrumb 'Create user', ''
     @user = User.new
   end
   
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    add_breadcrumb 'Edit user', ''
   end
 
   def update
@@ -47,11 +49,11 @@ class UsersController < ApplicationController
   end
   
   private
-
+=begin
     def signed_in_user
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
-
+=end
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)

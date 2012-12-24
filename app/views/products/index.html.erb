@@ -1,0 +1,25 @@
+<% provide(:title, "Products") %>
+
+<div class="hero-unit container-fluid">
+	<h3>Products</h3>
+	<div class="span8">
+		<table class="table">  
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Release Date</th>
+				<th>Genre</th>
+				<th></th>	
+			</tr>
+			<% if @products.any? %>
+		      
+		      	<tr>
+		      		<%= render @products %>
+		        		
+		      	</tr>
+
+		    <% end %>	
+		</table>
+	    
+	  </div>
+</div>

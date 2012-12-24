@@ -135,4 +135,29 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+  
+  describe "product associations" do
+
+    before { @user.save }
+    let!(:older_product) do 
+      FactoryGirl.create(:product, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_product) do
+      FactoryGirl.create(:product, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right products in the right order" do
+      @user.products.should == [newer_product, older_product]
+    end
+    
+    it "should destroy associated products" do
+      products = @user.products.dup
+      @user.destroy
+      products.should_not be_empty
+      products.each do |product|
+        product.find_by_id(product.id).should be_nil
+      end
+    end
+  end
+  
 end

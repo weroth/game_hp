@@ -90,6 +90,19 @@ describe "Authentication" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }        
       end
+      
+      describe "in the Product controller" do
+
+        describe "submitting to the create action" do
+          before { post products_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete products_path(FactoryGirl.create(:product)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
     end
     end
     
