@@ -55,14 +55,31 @@ line-height: 1em;
 }
 
 .banner {
-#  padding: 60px;
-#  margin-bottom: 30px;
-#  font-size: 18px;
-#  font-weight: 200;
-#  line-height: 30px;
-#  color: inherit;
   background-color: #eeeeee;
   height: 500px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.news {
+  background-color: #ffffff;
+  border-style:solid;
+  border-color:#f78b18 #f78b18;
+  height: 400px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.twitter {
+  background-color: #ffffff;
+  border-style:solid;
+  border-color:#3218f7 #3218f7;
+  height: 400px;
+  border-radius: 6px;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;

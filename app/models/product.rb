@@ -3,10 +3,10 @@ class Product < ActiveRecord::Base
   #belongs_to :user
       
   validates :title, presence: true, length: { minimum: 5}
-  validates :description, presence: true, length: { maximum: 250}
+  validates :description, presence: true, length: { minimum: 20}
   validates :platform, presence: true, length: { minimum: 4}
   validates :release_date, presence: true, length: { maximum: 20}
-  validates :genre, presence: true, length: { maximum: 10}
+  validates :genre, presence: true, length: { maximum: 40}
   
   validates :user_id, presence: true  
 end

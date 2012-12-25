@@ -19,6 +19,7 @@ class ProductsController < ApplicationController
   end
   
   def new
+    add_breadcrumb ("Create new product"), ''
     @product = current_user.products.build if signed_in?
   end
 
@@ -32,6 +33,7 @@ class ProductsController < ApplicationController
   end
   
   def show
+    add_breadcrumb 'Product Details', ''
     @product = Product.find(params[:id])
   end
   

@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
-  def home
-    
-        
+  def home  
+  end
+  
+  def about
+    @title = "About"
+    add_breadcrumb 'About', ''
   end
   
   def link

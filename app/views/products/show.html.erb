@@ -4,15 +4,27 @@
   <aside class="span8">
     <section>
       <h1>
-        <%= @product.title %>
+        <u>
+        	<%= @product.title %>
+        </u>
         
       </h1>
       
       <p>
       	<%= @product.description %>
       </p>
-      	
       
+      <table class="table">  
+			<tr>			
+				<th>Release Date</th>
+				<th>Genre</th>
+				<th></th>	
+			</tr>
+			<tr>
+				<td><%= @product.release_date %></td>
+				<td><%= @product.genre %></td>
+			</tr>
+      </table>
       
       <% if signed_in? %>
       <%= link_to "Edit", edit_product_path , class: "btn btn-medium btn btn-primary" %>

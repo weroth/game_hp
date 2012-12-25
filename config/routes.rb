@@ -15,6 +15,7 @@ GameHp::Application.routes.draw do
   match '/link', to: 'pages#link'
   match '/recruit', to: 'pages#recruit'
   match '/about', to: 'pages#about'
+  match '/webshop', to: 'pages#webshop'
   
 #  get "welcome/index"
   #root :to => 'welcome#index'

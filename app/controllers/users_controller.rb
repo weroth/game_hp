@@ -5,16 +5,13 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    add_breadcrumb 'User', ''
   end
   
   def new
     add_breadcrumb 'Create user', ''
     @user = User.new
-  end
-  
-  def show
-    @user = User.find(params[:id])
-  end
+  end  
   
   def create
     @user = User.new(params[:user])

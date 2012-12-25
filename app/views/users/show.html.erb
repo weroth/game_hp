@@ -1,11 +1,19 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
+  <aside class="span7">
     <section>
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
+    
+    <h3>
+    	Welcome, <%= @user.name%>!    	    
+    <h3>
+    	
+    <p>
+    	To get started, you can create new products or post news using the links on top bar.
+    </p>	
   </aside>
 </div>
