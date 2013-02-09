@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(function() {
+  $('#feed').miniFeed({
+    username: 'weroth_rf'  
+  });
+});
